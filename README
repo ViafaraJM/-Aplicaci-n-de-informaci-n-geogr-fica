@@ -1,0 +1,30 @@
+Introducción
+Este archivo README describe la implementación del patrón Visitor para exportar un grafo a formato XML en Python. El objetivo principal es explicar la elección del patrón Visitor, su funcionamiento y los beneficios que aporta en este contexto.
+
+Problema
+Se plantea la necesidad de exportar un grafo, que representa información geográfica, a formato XML. El grafo está compuesto por nodos de diferentes tipos, como ciudades, industrias y lugares de turismo. Se busca una solución que permita exportar el grafo a XML sin modificar las clases existentes de nodos.
+
+Solución
+Se propone la implementación del patrón Visitor para abordar este problema. El patrón Visitor permite separar la lógica de exportación del código de las clases de nodos, mejorando la modularidad, mantenibilidad y extensibilidad del código.
+
+Implementación
+El código se compone de las siguientes clases:
+
+Grafo: Representa la estructura del grafo y contiene una lista de nodos.
+Nodo: Clase base para todos los tipos de nodos.
+Ciudad: Representa una ciudad con información como nombre, latitud, longitud y población.
+Industria: Representa una industria con información como nombre, sector y empleados.
+LugarTurismo: Representa un lugar de turismo con información como nombre, tipo y descripción.
+Visitor: Interfaz que define el método accept para cada tipo de nodo.
+ExportarXMLVisitor: Implementación concreta del Visitor que genera el código XML.
+La exportación se realiza recorriendo el grafo y llamando al método accept de cada nodo, pasando como argumento un objeto Visitor. El objeto Visitor implementa los métodos visit_ciudad, visit_industria y visit_lugar_turismo para generar el código XML correspondiente a cada tipo de nodo.
+
+Beneficios del patrón Visitor
+
+Separación de responsabilidades
+Flexibilidad para diferentes tipos de nodos
+Extensibilidad para nuevos comportamientos
+Uso del doble despacho
+
+Conclusión
+La implementación del patrón Visitor en este contexto ofrece una solución flexible y extensible para exportar un grafo a formato XML sin modificar las clases existentes de nodos. Este patrón mejora la modularidad, mantenibilidad y extensibilidad del código, lo que lo convierte en una opción adecuada para proyectos que requieren exportar datos a diferentes formatos o que pueden evolucionar con el tiempo.
